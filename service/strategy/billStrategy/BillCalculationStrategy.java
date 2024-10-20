@@ -1,3 +1,3 @@
 public interface BillCalculationStrategy {
-    public Bill generateBill(Ticket ticket) ;
+    public double generateAmount(Ticket ticket) ;
 }
