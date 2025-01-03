@@ -1,3 +1,9 @@
+package model;
+
+import model.enums.BillStatus;
+
+import java.time.LocalDateTime;
+
 public class Bill extends BaseModel{
      private LocalDateTime exitTime ;
      private Ticket ticket ;

@@ -1,3 +1,7 @@
+package model;
+
+import java.time.LocalDateTime;
+
 public class Ticket extends BaseModel{
 
     private Operator operator ;

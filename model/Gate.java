@@ -1,3 +1,8 @@
+package model;
+
+import model.BaseModel;
+import model.enums.GateType;
+
 public class Gate extends BaseModel {
       private int gateno ;
       private Operator operator ;

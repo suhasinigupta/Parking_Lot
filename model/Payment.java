@@ -1,3 +1,10 @@
+package model;
+
+import model.enums.PaymentMode;
+import model.enums.PaymentStatus;
+
+import java.time.LocalDateTime;
+
 public class Payment extends BaseModel{
        private String referenceno ;
        private Bill bill ;
@@ -5,7 +12,7 @@ public class Payment extends BaseModel{
        private LocalDateTime paymentTime ;
        private PaymentMode paymentMode ;
        private PaymentStatus paymentStatus ;
-
+       private Ticket ticket ;
        public Payment(){
 
        }

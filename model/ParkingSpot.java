@@ -1,3 +1,8 @@
+package model;
+
+import model.enums.ParkingSpotStatus;
+import model.enums.VehicleType;
+
 public class ParkingSpot extends BaseModel{
     private int number ;
     private ParkingSpotStatus spotStatus ;

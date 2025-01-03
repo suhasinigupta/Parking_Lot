@@ -1,3 +1,19 @@
+package service;
+
+import exception.GateNotFoundException;
+import exception.ParkingLotNotFoundException;
+import exception.SpotNotFoundException;
+import model.*;
+import model.enums.ParkingSpotStatus;
+import repository.GateRepository;
+import repository.ParkingLotRepository;
+import repository.ParkingSpotRepository;
+import repository.TicketRepository;
+import service.strategy.spotStrategy.SpotAllocationStrategy;
+import service.strategy.spotStrategy.SpotAllocationStrategyFactory;
+
+import java.time.LocalDateTime;
+
 public class TicketService{
     private GateRepository gaterepo ;
     private ParkingLotRepository lotrepo ;
@@ -11,12 +27,13 @@ public class TicketService{
           this.ticketrepo=ticketrepo ;
     }
 
-    public Ticket generateTicket(Vehicle vehicle, int gateId, int parkinglotId){
+    public Ticket generateTicket(Vehicle vehicle, int gateId, int parkinglotId) throws GateNotFoundException, ParkingLotNotFoundException, SpotNotFoundException {
         SpotAllocationStrategy strategy= SpotAllocationStrategyFactory.getSpotAllocationStrategy() ;
-        ParkingSpot spot=strategy.allocateSpot(parkinglot, vehicle) ;
+
+        ParkingSpot spot=strategy.allocateSpot(lotrepo.get(parkinglotId), vehicle) ;
         spot.setSpotStatus(ParkingSpotStatus.FULL) ;
         spot.setVehicle(vehicle) ;
-        Gate gate=gaterepo.get(gateId) ;
+        Gate gate=gaterepo.getGate(gateId) ;
         ParkingLot lot=lotrepo.get(parkinglotId) ;
         Ticket ticket=new Ticket() ;
         ticket.setEntrygate(gate) ;

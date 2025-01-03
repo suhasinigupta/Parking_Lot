@@ -1,3 +1,12 @@
+package model;
+
+import model.enums.ParkingLotStatus;
+import model.enums.VehicleType;
+import service.strategy.billStrategy.BillCalculationStrategy;
+import service.strategy.spotStrategy.SpotAllocationStrategy;
+
+import java.util.List;
+
 public class ParkingLot extends BaseModel{
     private String name ;
     private String address ;
@@ -6,7 +15,7 @@ public class ParkingLot extends BaseModel{
     private List<VehicleType> vehicleType ;
     private int capacity ;
     private BillCalculationStrategy billCalculationStrategy ;
-    private  SpotAllocationStrategy spotCalculationStrategy ;
+    private SpotAllocationStrategy spotCalculationStrategy ;
 
     public ParkingLot(){
 

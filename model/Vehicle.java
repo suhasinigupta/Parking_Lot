@@ -1,12 +1,18 @@
-public class Vehicle extends BaseModel{
+package model;
+
+import model.enums.VehicleType;
+
+public class Vehicle extends BaseModel {
     private String vehicleNo ;
     private String driver ;
     private VehicleType vehicletype ;
 
     public Vehicle(){
+        super();
 
     }
     public Vehicle(String vehicleNo, String driver , VehicleType vehicletype){
+        super() ;
          this.vehicleNo=vehicleNo ;
          this.driver=driver ;
          this.vehicletype=vehicletype ;
@@ -28,11 +34,11 @@ public class Vehicle extends BaseModel{
         this.driver = driver;
     }
 
-    public int getVehicleNo() {
+    public String getVehicleNo() {
         return vehicleNo;
     }
 
-    public void setVehicleNo(int vehicleNo) {
+    public void setVehicleNo(String vehicleNo) {
         this.vehicleNo = vehicleNo;
     }
 }

@@ -1,3 +1,9 @@
+package model;
+
+import model.enums.ParkingFloorStatus;
+
+import java.util.List;
+
 public class ParkingFloor extends BaseModel{
     private int floorno ;
     private List<ParkingSpot> parkingspot ;

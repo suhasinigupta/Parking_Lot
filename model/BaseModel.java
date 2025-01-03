@@ -1,3 +1,7 @@
+package model;
+
+import java.time.LocalDateTime;
+
 public abstract class BaseModel{
     private int id ;
     private LocalDateTime createdAt ;
@@ -5,6 +9,7 @@ public abstract class BaseModel{
     private String createdBy ;
     private String updatedBy ;
 
+    public BaseModel(){}
     public BaseModel(int id, LocalDateTime createdAt,LocalDateTime updatedAt,String createdBy,String updatedBy){
         this.id=id ;
         this.createdAt=createdAt ;
